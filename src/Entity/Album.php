@@ -76,6 +76,7 @@ class Album
     public function __construct()
     {
         $this->images = new ArrayCollection();
+        $this->setCreatedAt(new \DateTimeImmutable());
     }
 
     /**
@@ -123,7 +124,7 @@ class Album
      */
     public function getCover(): string
     {
-        return $this->cover;
+        return (string) $this->cover;
     }
 
     /**

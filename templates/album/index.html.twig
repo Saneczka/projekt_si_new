@@ -35,7 +35,13 @@
                 {% for album in pagination.items %}
                     <tr>
                         <td>{{ album.id }}</td>
-                        <td><img src="{{ asset('/upload/')~album.cover }}" width="150"></td>
+                        <td>
+                            {% if album.cover %}
+                            <img src="{{ asset('/upload/')~album.cover }}" width="150">
+                            {% else %}
+                            {{ 'no_cover_photo'|trans }}
+                            {% endif %}
+                        </td>
                         <td>{{ album.name }}</td>
                         <td>{{ album.description }}</td>
                         <td>{{ album.createdAt|date('Y-m-d H:i') }}</td>
