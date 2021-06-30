@@ -7,6 +7,7 @@ namespace App\Entity;
 
 use App\Repository\UserDataRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=UserDataRepository::class)
@@ -21,21 +22,31 @@ class UserData
     private $id;
 
     /**
+     * @var string
+     *
      * @ORM\Column(type="string", length=128, nullable=true)
+     *
+     * @Assert\Email
      */
     private $email;
 
     /**
+     * @var string
+     *
      * @ORM\Column(type="string", length=64, nullable=true)
      */
     private $firstName;
 
     /**
+     * @var string
+     *
      * @ORM\Column(name="last_name", type="string", length=64, nullable=true)
      */
     private $lastName;
 
     /**
+     * @var User
+     *
      * @ORM\OneToOne(targetEntity=User::class, mappedBy="profile", cascade={"persist", "remove"})
      */
     private $user;

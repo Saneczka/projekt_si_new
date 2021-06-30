@@ -41,9 +41,10 @@ class Album
     private $description;
 
     /**
-     * @var string
+     * @var Image
      *
-     * @ORM\Column(name="cover", type="string", length=255, nullable=true)
+     * @ORM\OneToOne(targetEntity=Image::class)
+     * @ORM\JoinColumn(name="cover_id", referencedColumnName="id", nullable=true, onDelete="SET NULL")
      */
     private $cover;
 
@@ -122,17 +123,17 @@ class Album
     }
 
     /**
-     * @return string
+     * @return Image|null
      */
-    public function getCover(): string
+    public function getCover(): ?Image
     {
-        return (string) $this->cover;
+        return $this->cover;
     }
 
     /**
-     * @param string $cover
+     * @param Image|null $cover
      */
-    public function setCover(string $cover): void
+    public function setCover(?Image $cover): void
     {
         $this->cover = $cover;
     }

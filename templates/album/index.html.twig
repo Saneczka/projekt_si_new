@@ -38,7 +38,7 @@
                         <td>{{ album.id }}</td>
                         <td>
                             {% if album.cover %}
-                            <img src="{{ asset('/upload/')~album.cover }}" width="150">
+                            <img src="{{ asset('/upload/')~album.cover.filename }}" width="150">
                             {% else %}
                             <img src="{{ asset('/img/image-placeholder-350x350.png') }}" width="150">
                             {% endif %}

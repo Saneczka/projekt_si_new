@@ -6,10 +6,15 @@
 namespace App\Form;
 
 use App\Entity\Album;
+use App\Entity\Image;
+use App\Repository\ImageRepository;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\Form\FormEvent;
+use Symfony\Component\Form\FormEvents;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 /**
@@ -45,7 +50,31 @@ class AlbumFormType extends AbstractType
                     'label' => 'album_description',
                     'required' => true,
                 ]
-            );
+            )
+        ;
+
+        $builder->addEventListener(FormEvents::PRE_SET_DATA, function (FormEvent $event) {
+            $album = $event->getData();
+            $form = $event->getForm();
+
+            // checks if the Album object is edited
+            if ($album && null !== $album->getId()) {
+                $form->add(
+                    'cover',
+                    EntityType::class,
+                    [
+                        'class' => Image::class,
+                        'choice_label' => 'title',
+                        'label' => 'album_cover',
+                        'required' => false,
+                        'query_builder' => function (ImageRepository $imageRepository) use ($album) {
+                            return $imageRepository->createQueryBuilder('image')
+                                ->where('image.album = :id')->setParameter('id', $album->getId());
+                        }
+                    ]
+                );
+            }
+        });
     }
 
     /**
@@ -55,7 +84,9 @@ class AlbumFormType extends AbstractType
      */
     public function configureOptions(OptionsResolver $resolver): void
     {
-        $resolver->setDefaults(['data_class' => Album::class]);
+        $resolver->setDefaults([
+            'data_class' => Album::class
+        ]);
     }
 
     /**

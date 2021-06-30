@@ -7,6 +7,7 @@ namespace App\Service;
 
 use App\Entity\Album;
 use App\Repository\AlbumRepository;
+use App\Repository\ImageRepository;
 use Knp\Component\Pager\Pagination\PaginationInterface;
 use Knp\Component\Pager\PaginatorInterface;
 
@@ -21,16 +22,20 @@ class AlbumService
     private $albumRepository;
     /** @var PaginatorInterface */
     private $paginator;
+    /** @var ImageRepository */
+    private $imageRepository;
 
     /**
      * AlbumService constructor.
      * @param \App\Repository\AlbumRepository         $albumRepository
      * @param \Knp\Component\Pager\PaginatorInterface $paginator
+     * @param \App\Repository\ImageRepository         $imageRepository
      */
-    public function __construct(AlbumRepository $albumRepository, PaginatorInterface $paginator)
+    public function __construct(AlbumRepository $albumRepository, PaginatorInterface $paginator, ImageRepository $imageRepository)
     {
         $this->albumRepository = $albumRepository;
         $this->paginator = $paginator;
+        $this->imageRepository = $imageRepository;
     }
 
     /**
@@ -69,6 +74,9 @@ class AlbumService
      */
     public function delete(Album $album)
     {
+        if($cover = $album->getCover()) {
+            $this->imageRepository->delete($cover);
+        }
         $this->albumRepository->delete($album);
     }
 }

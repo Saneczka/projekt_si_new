@@ -124,6 +124,10 @@ class Image
     public function setAlbum(Album $album): void
     {
         $this->album = $album;
+        $cover = $this->album->getCover();
+        if($cover === null) {
+            $this->album->setCover($this);
+        }
     }
 
     /**

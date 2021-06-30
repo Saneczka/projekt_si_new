@@ -51,7 +51,7 @@ class AlbumWithImagesFixtures extends AbstractBaseFixtures implements DependentF
             $photoToCopy = $this->getImgDir() . DIRECTORY_SEPARATOR . 'php-symfony.png';
 
             // dodawanie zdjęć do albumów
-            $coverPhoto = '';
+            $coverPhoto = null;
             for ($j = 1; $j <= 3; ++$j) {
                 $dest = $this->getUploadDir() . DIRECTORY_SEPARATOR . "placeholder_album_{$i}_{$j}.png";
                 $this->filesystem->copy($photoToCopy, $dest, true);
@@ -61,8 +61,8 @@ class AlbumWithImagesFixtures extends AbstractBaseFixtures implements DependentF
                 $img->setTitle("Image {$i}/{$j}");
                 $img->setDescription($faker->sentence);
                 $img->setFilename($pathInfo['basename']);
-                if($coverPhoto === '') {
-                    $coverPhoto = $pathInfo['basename'];
+                if($coverPhoto === null) {
+                    $coverPhoto = $img;
                 }
 
                 // dodawanie komentarzy do zdjęć
