@@ -1,11 +1,11 @@
 <?php
 /**
- * AlbumFormType
+ * ImageFormType
  */
 
 namespace App\Form;
 
-use App\Entity\Album;
+use App\Entity\Image;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -15,7 +15,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 /**
  * Class EventFormType
  */
-class AlbumFormType extends AbstractType
+class ImageFormType extends AbstractType
 {
     /**
      * Builds the form.
@@ -31,10 +31,10 @@ class AlbumFormType extends AbstractType
     {
         $builder
             ->add(
-                'name',
+                'title',
                 TextType::class,
                 [
-                    'label' => 'album_name',
+                    'label' => 'image_title',
                     'required' => true,
                 ]
             )
@@ -42,7 +42,7 @@ class AlbumFormType extends AbstractType
                 'description',
                 TextareaType::class,
                 [
-                    'label' => 'album_description',
+                    'label' => 'image_description',
                     'required' => true,
                 ]
             );
@@ -55,7 +55,7 @@ class AlbumFormType extends AbstractType
      */
     public function configureOptions(OptionsResolver $resolver): void
     {
-        $resolver->setDefaults(['data_class' => Album::class]);
+        $resolver->setDefaults(['data_class' => Image::class]);
     }
 
     /**
@@ -66,6 +66,6 @@ class AlbumFormType extends AbstractType
      */
     public function getBlockPrefix(): string
     {
-        return 'album';
+        return 'image';
     }
 }

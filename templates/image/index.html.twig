@@ -1,15 +1,15 @@
 {% extends 'base.html.twig' %}
 
     {% block title %}
-        {{ 'album_list_title'|trans }}
+        {{ 'image_list_title'|trans }}
     {% endblock %}
 
     {% block body %}
-    <div id="album_list">
-        <h1>{{ 'album_list_title'|trans }}</h1>
+    <div id="image_list">
+        <h1>{{ 'image_list_title'|trans }}</h1>
         {% if is_granted('ROLE_ADMIN') %}
         <div class="button-container" style="margin-bottom: 1em;">
-            <a class="btn btn-success" href="{{ url('album_create') }}"
+            <a class="btn btn-success" href="{{ url('image_create') }}"
                title="{{ 'action_create'|trans }}">
                 {{ 'action_create'|trans }}
             </a>
@@ -23,33 +23,31 @@
             <table class="table table-striped">
                 <thead>
                 <tr>
-                    <th>{{ knp_pagination_sortable(pagination, 'label_id'|trans, 'album.id') }}</th>
-                    <th>{{ 'album_cover'|trans }}</th>
-                    <th>{{ knp_pagination_sortable(pagination, 'album_title'|trans, 'album.name') }}</th>
-                    <th>{{ knp_pagination_sortable(pagination, 'album_description'|trans, 'album.description') }}</th>
-                    <th>{{ knp_pagination_sortable(pagination, 'album_createdAt'|trans, 'album.createdAt') }}</th>
+                    <th>{{ knp_pagination_sortable(pagination, 'label_id'|trans, 'image.id') }}</th>
+                    <th>{{ 'image_picture'|trans }}</th>
+                    <th>{{ knp_pagination_sortable(pagination, 'image_title'|trans, 'image.title') }}</th>
+                    <th>{{ knp_pagination_sortable(pagination, 'image_description'|trans, 'image.description') }}</th>
                     <th>{{ 'label_actions'|trans }}</th>
                 </tr>
                 </thead>
                 <tbody>
-                {% for album in pagination.items %}
+                {% for image in pagination.items %}
                     <tr>
-                        <td>{{ album.id }}</td>
-                        <td><img src="{{ asset('/upload/')~album.cover }}" width="150"></td>
-                        <td>{{ album.name }}</td>
-                        <td>{{ album.description }}</td>
-                        <td>{{ album.createdAt|date('Y-m-d H:i') }}</td>
+                        <td>{{ image.id }}</td>
+                        <td><img src="{{ asset('/upload/')~image.filename }}" width="150"></td>
+                        <td>{{ image.title }}</td>
+                        <td>{{ image.description }}</td>
                         <td>
-                            <a class="btn btn-primary" href="{{ url('album_show', {id: album.id}) }}"
+                            <a class="btn btn-primary" href="{{ url('image_show', {id: image.id}) }}"
                                title="{{ 'action_show'|trans }}">
                                 {{ 'action_show'|trans }}
                             </a>
                             {% if is_granted('ROLE_ADMIN') %}
-                            <a class="btn btn-primary" href="{{ url('album_edit', {id: album.id}) }}"
+                            <a class="btn btn-primary" href="{{ url('image_edit', {id: image.id}) }}"
                                title="{{ 'action_edit'|trans }}">
                                 {{ 'action_edit'|trans }}
                             </a>
-                            <a class="btn btn-danger" href="{{ url('album_delete', {id: album.id}) }}"
+                            <a class="btn btn-danger" href="{{ url('image_delete', {id: image.id}) }}"
                                title="{{ 'action_delete'|trans }}">
                                 {{ 'action_delete'|trans }}
                             </a>

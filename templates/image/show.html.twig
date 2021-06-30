@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ 'title_image_show'|trans({'%id%': image.id|default('')}) }}
+{% endblock %}
+
+{% block body %}
+    <h1>{{ 'title_image_show'|trans({'%id%':image.id|default('')}) }}</h1>
+    {% if image is defined %}
+        <dl class="dl-horizontal">
+            <dt>{{ 'label_id'|trans }}</dt>
+            <dd>{{ image.id }}</dd>
+            <dt>{{ 'image_title'|trans }}</dt>
+            <dd>{{ image.title }}</dd>
+            <dt>{{ 'image_description'|trans }}</dt>
+            <dd>{{ image.description }}</dd>
+        </dl>
+        <p>
+            <a href="{{ url('image_index') }}" class="btn btn-light">
+                {{ 'action_back_to_list'|trans }} <i class="bi bi-arrow-return-left"></i>
+            </a>
+        </p>
+    {% else %}
+        {% include 'default/_single_flash_message.html.twig' with {
+            type: 'warning',
+            message: 'message_item_not_found'|trans
+        } %}
+    {% endif %}
+{% endblock %}

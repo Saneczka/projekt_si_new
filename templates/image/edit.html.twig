@@ -1,0 +1,11 @@
+{% include 'default/_form.html.twig' with {
+    page_title: 'title_image_edit',
+    page_title_param: {'%id%': image.id},
+    attr: {
+        method: 'PUT',
+        action: url('image_edit', {'id': image.id}),
+        attr: {novalidate: 'novalidate'}
+    },
+    form: form,
+    back_to_list_path: 'image_index',
+} %}
