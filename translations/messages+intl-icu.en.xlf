@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="pl" target-language="en" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="llj5ivW" resname="action_create">
+        <source>action_create</source>
+        <target>__action_create</target>
+      </trans-unit>
+      <trans-unit id="cRdVWHA" resname="title_comment_delete">
+        <source>title_comment_delete</source>
+        <target>__title_comment_delete</target>
+      </trans-unit>
+      <trans-unit id="8y7TBVC" resname="alert_delete_element">
+        <source>alert_delete_element</source>
+        <target>__alert_delete_element</target>
+      </trans-unit>
+      <trans-unit id="DTHe6IT" resname="action_delete">
+        <source>action_delete</source>
+        <target>__action_delete</target>
+      </trans-unit>
+      <trans-unit id="XL6Mb3T" resname="action_back_to_list">
+        <source>action_back_to_list</source>
+        <target>__action_back_to_list</target>
+      </trans-unit>
+      <trans-unit id="7GytJRa" resname="album_list_title">
+        <source>album_list_title</source>
+        <target>__album_list_title</target>
+      </trans-unit>
+      <trans-unit id="l7LeTSy" resname="comment_list_title">
+        <source>comment_list_title</source>
+        <target>__comment_list_title</target>
+      </trans-unit>
+      <trans-unit id="cDIf21h" resname="label_id">
+        <source>label_id</source>
+        <target>__label_id</target>
+      </trans-unit>
+      <trans-unit id="SkLeEPv" resname="comment_nickname">
+        <source>comment_nickname</source>
+        <target>__comment_nickname</target>
+      </trans-unit>
+      <trans-unit id="YAyEENm" resname="comment_email">
+        <source>comment_email</source>
+        <target>__comment_email</target>
+      </trans-unit>
+      <trans-unit id="FbTblrC" resname="comment_content">
+        <source>comment_content</source>
+        <target>__comment_content</target>
+      </trans-unit>
+      <trans-unit id="umIUF_9" resname="label_actions">
+        <source>label_actions</source>
+        <target>__label_actions</target>
+      </trans-unit>
+      <trans-unit id="U6OJ_DJ" resname="action_show">
+        <source>action_show</source>
+        <target>__action_show</target>
+      </trans-unit>
+      <trans-unit id="uu3dQ3z" resname="action_edit">
+        <source>action_edit</source>
+        <target>__action_edit</target>
+      </trans-unit>
+      <trans-unit id="0eTfBra" resname="message_empty_list">
+        <source>message_empty_list</source>
+        <target>__message_empty_list</target>
+      </trans-unit>
+      <trans-unit id="6_g9EQQ" resname="title_comment_show">
+        <source>title_comment_show</source>
+        <target>__title_comment_show</target>
+      </trans-unit>
+      <trans-unit id="HfrUmas" resname="message_item_not_found">
+        <source>message_item_not_found</source>
+        <target>__message_item_not_found</target>
+      </trans-unit>
+      <trans-unit id="kRNY8g6" resname="menu_album">
+        <source>menu_album</source>
+        <target>__menu_album</target>
+      </trans-unit>
+      <trans-unit id="k2jRqft" resname="menu_image">
+        <source>menu_image</source>
+        <target>__menu_image</target>
+      </trans-unit>
+      <trans-unit id="aBzRbY." resname="menu_comments">
+        <source>menu_comments</source>
+        <target>__menu_comments</target>
+      </trans-unit>
+      <trans-unit id="zhcSDte" resname="menu_logout">
+        <source>menu_logout</source>
+        <target>__menu_logout</target>
+      </trans-unit>
+      <trans-unit id="Lr19MDJ" resname="menu_login">
+        <source>menu_login</source>
+        <target>__menu_login</target>
+      </trans-unit>
+      <trans-unit id="OsBHp0a" resname="title_image_delete">
+        <source>title_image_delete</source>
+        <target>__title_image_delete</target>
+      </trans-unit>
+      <trans-unit id="tBgzznO" resname="image_list_title">
+        <source>image_list_title</source>
+        <target>__image_list_title</target>
+      </trans-unit>
+      <trans-unit id="RJ9a4TF" resname="image_picture">
+        <source>image_picture</source>
+        <target>__image_picture</target>
+      </trans-unit>
+      <trans-unit id="MpoQT9v" resname="image_album">
+        <source>image_album</source>
+        <target>__image_album</target>
+      </trans-unit>
+      <trans-unit id="lKEU6Ep" resname="image_title">
+        <source>image_title</source>
+        <target>__image_title</target>
+      </trans-unit>
+      <trans-unit id="v1fnkcx" resname="image_description">
+        <source>image_description</source>
+        <target>__image_description</target>
+      </trans-unit>
+      <trans-unit id="xAe6P0D" resname="title_image_show">
+        <source>title_image_show</source>
+        <target>__title_image_show</target>
+      </trans-unit>
+      <trans-unit id="kk82LWl" resname="image_comments">
+        <source>image_comments</source>
+        <target>__image_comments</target>
+      </trans-unit>
+      <trans-unit id="rOBOHiy" resname="action_save">
+        <source>action_save</source>
+        <target>__action_save</target>
+      </trans-unit>
+      <trans-unit id="OkykRj7" resname="title_album_delete">
+        <source>title_album_delete</source>
+        <target>__title_album_delete</target>
+      </trans-unit>
+      <trans-unit id="petWhNd" resname="album_cover">
+        <source>album_cover</source>
+        <target>__album_cover</target>
+      </trans-unit>
+      <trans-unit id="DsNbDBW" resname="album_title">
+        <source>album_title</source>
+        <target>__album_title</target>
+      </trans-unit>
+      <trans-unit id="bkK85mb" resname="album_description">
+        <source>album_description</source>
+        <target>__album_description</target>
+      </trans-unit>
+      <trans-unit id="AMSIxSO" resname="album_createdAt">
+        <source>album_createdAt</source>
+        <target>__album_createdAt</target>
+      </trans-unit>
+      <trans-unit id="LoXVQXs" resname="no_cover_photo">
+        <source>no_cover_photo</source>
+        <target>__no_cover_photo</target>
+      </trans-unit>
+      <trans-unit id="osl_One" resname="title_album_show">
+        <source>title_album_show</source>
+        <target>__title_album_show</target>
+      </trans-unit>
+      <trans-unit id="hOeEx61" resname="album_name">
+        <source>album_name</source>
+        <target>__album_name</target>
+      </trans-unit>
+      <trans-unit id="d8F3_Ys" resname="login_page_title">
+        <source>login_page_title</source>
+        <target>__login_page_title</target>
+      </trans-unit>
+      <trans-unit id="f1ighji" resname="user_username">
+        <source>user_username</source>
+        <target>__user_username</target>
+      </trans-unit>
+      <trans-unit id="QjSpzqI" resname="user_password">
+        <source>user_password</source>
+        <target>__user_password</target>
+      </trans-unit>
+      <trans-unit id="4gGWMJW" resname="action_sign_in">
+        <source>action_sign_in</source>
+        <target>__action_sign_in</target>
+      </trans-unit>
+      <trans-unit id="JlNgqFZ" resname="message_form_error">
+        <source>message_form_error</source>
+        <target>__message_form_error</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

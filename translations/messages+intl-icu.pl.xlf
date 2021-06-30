@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="pl" target-language="pl" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="llj5ivW" resname="action_create">
+        <source>action_create</source>
+        <target>Dodaj</target>
+      </trans-unit>
+      <trans-unit id="cRdVWHA" resname="title_comment_delete">
+        <source>title_comment_delete</source>
+        <target>Usuń komentarz</target>
+      </trans-unit>
+      <trans-unit id="8y7TBVC" resname="alert_delete_element">
+        <source>alert_delete_element</source>
+        <target>Uwaga! Element zostanie usunięty. Jesteś pewien?</target>
+      </trans-unit>
+      <trans-unit id="DTHe6IT" resname="action_delete">
+        <source>action_delete</source>
+        <target>Usuń</target>
+      </trans-unit>
+      <trans-unit id="XL6Mb3T" resname="action_back_to_list">
+        <source>action_back_to_list</source>
+        <target>Powrót</target>
+      </trans-unit>
+      <trans-unit id="7GytJRa" resname="album_list_title">
+        <source>album_list_title</source>
+        <target>Lista albumów</target>
+      </trans-unit>
+      <trans-unit id="l7LeTSy" resname="comment_list_title">
+        <source>comment_list_title</source>
+        <target>Lista komentarzy</target>
+      </trans-unit>
+      <trans-unit id="cDIf21h" resname="label_id">
+        <source>label_id</source>
+        <target>Id</target>
+      </trans-unit>
+      <trans-unit id="SkLeEPv" resname="comment_nickname">
+        <source>comment_nickname</source>
+        <target>Pseudonim</target>
+      </trans-unit>
+      <trans-unit id="YAyEENm" resname="comment_email">
+        <source>comment_email</source>
+        <target>Email</target>
+      </trans-unit>
+      <trans-unit id="FbTblrC" resname="comment_content">
+        <source>comment_content</source>
+        <target>Treść</target>
+      </trans-unit>
+      <trans-unit id="umIUF_9" resname="label_actions">
+        <source>label_actions</source>
+        <target>Akcje</target>
+      </trans-unit>
+      <trans-unit id="U6OJ_DJ" resname="action_show">
+        <source>action_show</source>
+        <target>Pokaż</target>
+      </trans-unit>
+      <trans-unit id="uu3dQ3z" resname="action_edit">
+        <source>action_edit</source>
+        <target>Edycja</target>
+      </trans-unit>
+      <trans-unit id="0eTfBra" resname="message_empty_list">
+        <source>message_empty_list</source>
+        <target>Lista jest pusta</target>
+      </trans-unit>
+      <trans-unit id="6_g9EQQ" resname="title_comment_show">
+        <source>title_comment_show</source>
+        <target>Komentarz</target>
+      </trans-unit>
+      <trans-unit id="HfrUmas" resname="message_item_not_found">
+        <source>message_item_not_found</source>
+        <target>Obiekt nie znaleziony</target>
+      </trans-unit>
+      <trans-unit id="kRNY8g6" resname="menu_album">
+        <source>menu_album</source>
+        <target>Albumy</target>
+      </trans-unit>
+      <trans-unit id="k2jRqft" resname="menu_image">
+        <source>menu_image</source>
+        <target>Zdjęcia</target>
+      </trans-unit>
+      <trans-unit id="aBzRbY." resname="menu_comments">
+        <source>menu_comments</source>
+        <target>Komentarze</target>
+      </trans-unit>
+      <trans-unit id="zhcSDte" resname="menu_logout">
+        <source>menu_logout</source>
+        <target>Wyloguj</target>
+      </trans-unit>
+      <trans-unit id="Lr19MDJ" resname="menu_login">
+        <source>menu_login</source>
+        <target>Zaloguj</target>
+      </trans-unit>
+      <trans-unit id="OsBHp0a" resname="title_image_delete">
+        <source>title_image_delete</source>
+        <target>Usuń zdjęcie</target>
+      </trans-unit>
+      <trans-unit id="tBgzznO" resname="image_list_title">
+        <source>image_list_title</source>
+        <target>Lista zdjęć</target>
+      </trans-unit>
+      <trans-unit id="RJ9a4TF" resname="image_picture">
+        <source>image_picture</source>
+        <target>Zdjęcie</target>
+      </trans-unit>
+      <trans-unit id="MpoQT9v" resname="image_album">
+        <source>image_album</source>
+        <target>Album</target>
+      </trans-unit>
+      <trans-unit id="lKEU6Ep" resname="image_title">
+        <source>image_title</source>
+        <target>Tytuł</target>
+      </trans-unit>
+      <trans-unit id="v1fnkcx" resname="image_description">
+        <source>image_description</source>
+        <target>Opis</target>
+      </trans-unit>
+      <trans-unit id="xAe6P0D" resname="title_image_show">
+        <source>title_image_show</source>
+        <target>Zdjęcie</target>
+      </trans-unit>
+      <trans-unit id="kk82LWl" resname="image_comments">
+        <source>image_comments</source>
+        <target>Komentarze</target>
+      </trans-unit>
+      <trans-unit id="rOBOHiy" resname="action_save">
+        <source>action_save</source>
+        <target>Zapisz</target>
+      </trans-unit>
+      <trans-unit id="OkykRj7" resname="title_album_delete">
+        <source>title_album_delete</source>
+        <target>Usuń album</target>
+      </trans-unit>
+      <trans-unit id="petWhNd" resname="album_cover">
+        <source>album_cover</source>
+        <target>Okładka</target>
+      </trans-unit>
+      <trans-unit id="DsNbDBW" resname="album_title">
+        <source>album_title</source>
+        <target>Tytuł</target>
+      </trans-unit>
+      <trans-unit id="bkK85mb" resname="album_description">
+        <source>album_description</source>
+        <target>Opis</target>
+      </trans-unit>
+      <trans-unit id="AMSIxSO" resname="album_createdAt">
+        <source>album_createdAt</source>
+        <target>Dodano</target>
+      </trans-unit>
+      <trans-unit id="LoXVQXs" resname="no_cover_photo">
+        <source>no_cover_photo</source>
+        <target>Brak zdjęć</target>
+      </trans-unit>
+      <trans-unit id="osl_One" resname="title_album_show">
+        <source>title_album_show</source>
+        <target>Album</target>
+      </trans-unit>
+      <trans-unit id="hOeEx61" resname="album_name">
+        <source>album_name</source>
+        <target>Nazwa</target>
+      </trans-unit>
+      <trans-unit id="d8F3_Ys" resname="login_page_title">
+        <source>login_page_title</source>
+        <target>Logowanie</target>
+      </trans-unit>
+      <trans-unit id="f1ighji" resname="user_username">
+        <source>user_username</source>
+        <target>Nazwa użytkownika</target>
+      </trans-unit>
+      <trans-unit id="QjSpzqI" resname="user_password">
+        <source>user_password</source>
+        <target>Hasło</target>
+      </trans-unit>
+      <trans-unit id="4gGWMJW" resname="action_sign_in">
+        <source>action_sign_in</source>
+        <target>Zaloguj</target>
+      </trans-unit>
+      <trans-unit id="JlNgqFZ" resname="message_form_error">
+        <source>message_form_error</source>
+        <target>Wystąpił błąd przy wysyłaniu formularza</target>
+      </trans-unit>
+      <trans-unit id="title_album_create" resname="title_album_create">
+        <source>title_album_create</source>
+        <target>Dodaj album</target>
+      </trans-unit>
+      <trans-unit id="title_album_edit" resname="title_album_edit">
+        <source>title_album_edit</source>
+        <target>Edytuj album</target>
+      </trans-unit>
+      <trans-unit id="title_image_create" resname="title_image_create">
+        <source>title_image_create</source>
+        <target>Dodaj zdjęcie</target>
+      </trans-unit>
+      <trans-unit id="title_image_edit" resname="title_image_edit">
+        <source>title_image_edit</source>
+        <target>Edytuj zdjęcie</target>
+      </trans-unit>
+      <trans-unit id="label_add_file" resname="label_add_file">
+        <source>label_add_file</source>
+        <target>Wybierz plik</target>
+      </trans-unit>
+      <trans-unit id="title_comment_create" resname="title_comment_create">
+        <source>title_comment_create</source>
+        <target>Dodaj komentarz</target>
+      </trans-unit>
+      <trans-unit id="title_comment_edit" resname="title_comment_edit">
+        <source>title_comment_edit</source>
+        <target>Edytuj komentarz</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
