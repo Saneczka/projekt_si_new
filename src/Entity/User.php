@@ -75,8 +75,6 @@ class User implements UserInterface
 
      * @Assert\NotBlank
      * @Assert\Type(type="string")
-     *
-     * @SecurityAssert\UserPassword
      */
     private $password;
 

@@ -233,6 +233,10 @@
         <source>message_deleted_successfully</source>
         <target>Usunięto element</target>
       </trans-unit>
+      <trans-unit id="menu_edit_profile" resname="menu_edit_profile">
+        <source>menu_edit_profile</source>
+        <target>Edytuj profil</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

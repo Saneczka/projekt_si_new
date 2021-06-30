@@ -14,6 +14,9 @@
                 </li>
                 {% if is_granted('IS_AUTHENTICATED_FULLY') %}
                 <li class="nav-item" style="float: right;">
+                    <a class="nav-link" href="{{ url('user_edit_profile') }}">{{ 'menu_edit_profile'|trans }}</a>
+                </li>
+                <li class="nav-item" style="float: right;">
                     <a class="nav-link" href="{{ url('app_logout') }}">{{ 'menu_logout'|trans }}</a>
                 </li>
                 {% else %}
