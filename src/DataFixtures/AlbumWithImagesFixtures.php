@@ -16,7 +16,6 @@ use Symfony\Component\Filesystem\Filesystem;
 
 /**
  * Class AlbumFixtures
- * @package DataFixtures
  */
 class AlbumWithImagesFixtures extends AbstractBaseFixtures implements DependentFixtureInterface
 {
@@ -30,10 +29,25 @@ class AlbumWithImagesFixtures extends AbstractBaseFixtures implements DependentF
      */
     protected $filesystem;
 
+    /**
+     * AlbumWithImagesFixtures constructor.
+     * @param Filesystem            $filesystem
+     * @param ParameterBagInterface $parameterBag
+     */
     public function __construct(Filesystem $filesystem, ParameterBagInterface $parameterBag)
     {
         $this->filesystem = $filesystem;
         $this->parameterBag = $parameterBag;
+    }
+
+    /**
+     * @return string[]
+     */
+    public function getDependencies()
+    {
+        return [
+            UserFixtures::class,
+        ];
     }
 
     /**
@@ -48,12 +62,12 @@ class AlbumWithImagesFixtures extends AbstractBaseFixtures implements DependentF
             $album = new Album();
             $album->setName("Album {$i}");
             $album->setDescription($faker->sentence);
-            $photoToCopy = $this->getImgDir() . DIRECTORY_SEPARATOR . 'php-symfony.png';
+            $photoToCopy = $this->getImgDir().DIRECTORY_SEPARATOR.'php-symfony.png';
 
             // dodawanie zdjęć do albumów
             $coverPhoto = null;
             for ($j = 1; $j <= 3; ++$j) {
-                $dest = $this->getUploadDir() . DIRECTORY_SEPARATOR . "placeholder_album_{$i}_{$j}.png";
+                $dest = $this->getUploadDir().DIRECTORY_SEPARATOR."placeholder_album_{$i}_{$j}.png";
                 $this->filesystem->copy($photoToCopy, $dest, true);
                 $pathInfo = pathinfo($dest);
 
@@ -61,7 +75,7 @@ class AlbumWithImagesFixtures extends AbstractBaseFixtures implements DependentF
                 $img->setTitle("Image {$i}/{$j}");
                 $img->setDescription($faker->sentence);
                 $img->setFilename($pathInfo['basename']);
-                if($coverPhoto === null) {
+                if (null === $coverPhoto) {
                     $coverPhoto = $img;
                 }
 
@@ -101,15 +115,5 @@ class AlbumWithImagesFixtures extends AbstractBaseFixtures implements DependentF
     protected function getImgDir()
     {
         return $this->parameterBag->get('img_dir');
-    }
-
-    /**
-     * @return string[]
-     */
-    public function getDependencies()
-    {
-        return [
-            UserFixtures::class,
-        ];
     }
 }

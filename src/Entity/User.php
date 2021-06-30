@@ -219,6 +219,7 @@ class User implements UserInterface
 
     /**
      * @param Album $album
+     *
      * @return $this
      */
     public function addAlbum(Album $album): self
@@ -233,6 +234,7 @@ class User implements UserInterface
 
     /**
      * @param Album $album
+     *
      * @return $this
      */
     public function removeAlbum(Album $album): self

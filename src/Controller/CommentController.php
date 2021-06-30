@@ -25,7 +25,7 @@ class CommentController extends AbstractController
 
     /**
      * CommentController constructor.
-     * @param \App\Service\CommentService    $commentService
+     * @param \App\Service\CommentService $commentService
      */
     public function __construct(CommentService $commentService)
     {
@@ -92,7 +92,7 @@ class CommentController extends AbstractController
      * Show action.
      *
      * @param \Symfony\Component\HttpFoundation\Request $request HTTP request
-     * @param \App\Entity\Comment                      $comment   Comment entity
+     * @param \App\Entity\Comment                       $comment Comment entity
      *
      * @return \Symfony\Component\HttpFoundation\Response HTTP response
      *
@@ -120,7 +120,7 @@ class CommentController extends AbstractController
      * Edit action.
      *
      * @param \Symfony\Component\HttpFoundation\Request $request HTTP request
-     * @param \App\Entity\Comment                      $comment   Comment entity
+     * @param \App\Entity\Comment                       $comment Comment entity
      *
      * @return \Symfony\Component\HttpFoundation\Response HTTP response
      *
@@ -162,7 +162,7 @@ class CommentController extends AbstractController
      * Delete action.
      *
      * @param \Symfony\Component\HttpFoundation\Request $request HTTP request
-     * @param \App\Entity\Category                      $comment   Comment entity
+     * @param \App\Entity\Category                      $comment Comment entity
      *
      * @return \Symfony\Component\HttpFoundation\Response HTTP response
      *

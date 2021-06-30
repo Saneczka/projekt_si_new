@@ -65,6 +65,9 @@ class Image
      */
     private $title;
 
+    /**
+     * Image constructor.
+     */
     public function __construct()
     {
         $this->comments = new ArrayCollection();
@@ -125,7 +128,7 @@ class Image
     {
         $this->album = $album;
         $cover = $this->album->getCover();
-        if($cover === null) {
+        if (null === $cover) {
             $this->album->setCover($this);
         }
     }
@@ -140,6 +143,7 @@ class Image
 
     /**
      * @param Comment $comment
+     *
      * @return $this
      */
     public function addComment(Comment $comment): self
@@ -154,6 +158,7 @@ class Image
 
     /**
      * @param Comment $comment
+     *
      * @return $this
      */
     public function removeComment(Comment $comment): self

@@ -30,9 +30,10 @@ class ImageService
 
     /**
      * ImageService constructor.
-     * @param \App\Repository\ImageRepository         $imageRepository
-     * @param \Knp\Component\Pager\PaginatorInterface $paginator
-     * @param \App\Service\FileUploader               $fileUploader
+     * @param \App\Repository\ImageRepository          $imageRepository
+     * @param \Knp\Component\Pager\PaginatorInterface  $paginator
+     * @param \App\Service\FileUploader                $fileUploader
+     * @param \Symfony\Component\Filesystem\Filesystem $filesystem
      */
     public function __construct(ImageRepository $imageRepository, PaginatorInterface $paginator, FileUploader $fileUploader, Filesystem $filesystem)
     {
@@ -59,7 +60,7 @@ class ImageService
 
     /**
      * Zapisuje do encję do bazy i aktualizuje plik, jeśli przesłano
-     * @param \App\Entity\Image $image
+     * @param \App\Entity\Image                                        $image
      * @param \Symfony\Component\HttpFoundation\File\UploadedFile|null $file
      *
      * @throws \Doctrine\ORM\ORMException
@@ -70,7 +71,7 @@ class ImageService
         // ścieżka do usunięcia poprzedniego pliku
         $previousFilename = '';
 
-        if($file !== null) {
+        if (null !== $file) {
             // upload na server
             $uploadedFile = $this->fileUploader->upload($file);
             // pobranie poprzeczniej ścieżki
@@ -111,8 +112,8 @@ class ImageService
      */
     protected function removePreviousFile(string $previousFilename)
     {
-        if(!empty($previousFilename)) {
-            $previousFilepath = $this->fileUploader->getTargetDirectory() . DIRECTORY_SEPARATOR . $previousFilename;
+        if (!empty($previousFilename)) {
+            $previousFilepath = $this->fileUploader->getTargetDirectory().DIRECTORY_SEPARATOR.$previousFilename;
             if (file_exists($previousFilepath)) {
                 $this->filesystem->remove($previousFilepath);
             }

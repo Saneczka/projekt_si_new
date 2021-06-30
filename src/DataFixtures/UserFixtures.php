@@ -1,4 +1,7 @@
 <?php
+/**
+ * UserFixtures
+ */
 
 namespace App\DataFixtures;
 
@@ -7,6 +10,9 @@ use App\Entity\UserData;
 use Doctrine\Persistence\ObjectManager;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
+/**
+ * Class UserFixtures
+ */
 class UserFixtures extends AbstractBaseFixtures
 {
     /** @var UserPasswordEncoderInterface */
@@ -21,6 +27,9 @@ class UserFixtures extends AbstractBaseFixtures
         $this->passwordEncoder = $encoder;
     }
 
+    /**
+     * @param ObjectManager $manager
+     */
     protected function loadData(ObjectManager $manager): void
     {
         $admin = new User();

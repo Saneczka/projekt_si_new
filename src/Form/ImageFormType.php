@@ -46,7 +46,7 @@ class ImageFormType extends AbstractType
             ]),
         ];
 
-        if($options['photo_required']) {
+        if ($options['photo_required']) {
             $fileConstraints[] = new NotBlank();
         }
 

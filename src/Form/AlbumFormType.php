@@ -70,7 +70,7 @@ class AlbumFormType extends AbstractType
                         'query_builder' => function (ImageRepository $imageRepository) use ($album) {
                             return $imageRepository->createQueryBuilder('image')
                                 ->where('image.album = :id')->setParameter('id', $album->getId());
-                        }
+                        },
                     ]
                 );
             }
@@ -85,7 +85,7 @@ class AlbumFormType extends AbstractType
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
-            'data_class' => Album::class
+            'data_class' => Album::class,
         ]);
     }
 

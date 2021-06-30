@@ -180,6 +180,7 @@ class Album
 
     /**
      * @param Image $image
+     *
      * @return $this
      */
     public function addImage(Image $image): self
@@ -194,6 +195,7 @@ class Album
 
     /**
      * @param Image $image
+     *
      * @return $this
      */
     public function removeImage(Image $image): self

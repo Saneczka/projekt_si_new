@@ -31,8 +31,8 @@ class ImageController extends AbstractController
 
     /**
      * ImageController constructor.
-     * @param \App\Service\ImageService    $imageService
-     * @param \App\Service\CommentService    $commentService
+     * @param \App\Service\ImageService   $imageService
+     * @param \App\Service\CommentService $commentService
      */
     public function __construct(ImageService $imageService, CommentService $commentService)
     {
@@ -82,7 +82,7 @@ class ImageController extends AbstractController
     {
         $image = new Image();
         $form = $this->createForm(ImageFormType::class, $image, [
-            'photo_required' => true
+            'photo_required' => true,
         ]);
         $form->handleRequest($request);
 
@@ -104,7 +104,7 @@ class ImageController extends AbstractController
      * Show action.
      *
      * @param \Symfony\Component\HttpFoundation\Request $request HTTP request
-     * @param \App\Entity\Image                      $image   Image entity
+     * @param \App\Entity\Image                         $image   Image entity
      *
      * @return \Symfony\Component\HttpFoundation\Response HTTP response
      *
@@ -137,7 +137,7 @@ class ImageController extends AbstractController
             'image/show.html.twig',
             [
                 'image' => $image,
-                'commentForm' => $commentForm->createView()
+                'commentForm' => $commentForm->createView(),
             ]
         );
     }
@@ -146,7 +146,7 @@ class ImageController extends AbstractController
      * Edit action.
      *
      * @param \Symfony\Component\HttpFoundation\Request $request HTTP request
-     * @param \App\Entity\Image                      $image   Image entity
+     * @param \App\Entity\Image                         $image   Image entity
      *
      * @return \Symfony\Component\HttpFoundation\Response HTTP response
      *

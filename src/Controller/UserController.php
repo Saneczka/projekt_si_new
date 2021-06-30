@@ -22,7 +22,7 @@ class UserController extends AbstractController
 
     /**
      * UserController constructor.
-     * @param \App\Service\UserService    $userService
+     * @param \App\Service\UserService $userService
      */
     public function __construct(UserService $userService)
     {
@@ -37,7 +37,9 @@ class UserController extends AbstractController
      * )
      *
      * @param Request $request
+     *
      * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
+     *
      * @throws \Doctrine\ORM\ORMException
      * @throws \Doctrine\ORM\OptimisticLockException
      *

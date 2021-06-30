@@ -74,7 +74,7 @@ class AlbumService
      */
     public function delete(Album $album)
     {
-        if($cover = $album->getCover()) {
+        if ($cover = $album->getCover()) {
             $this->imageRepository->delete($cover);
         }
         $this->albumRepository->delete($album);

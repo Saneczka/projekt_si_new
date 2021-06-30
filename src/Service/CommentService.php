@@ -24,7 +24,7 @@ class CommentService
 
     /**
      * CommentService constructor.
-     * @param \App\Repository\CommentRepository         $commentRepository
+     * @param \App\Repository\CommentRepository       $commentRepository
      * @param \Knp\Component\Pager\PaginatorInterface $paginator
      */
     public function __construct(CommentRepository $commentRepository, PaginatorInterface $paginator)

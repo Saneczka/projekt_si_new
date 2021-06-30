@@ -25,7 +25,7 @@ class AlbumController extends AbstractController
 
     /**
      * AlbumController constructor.
-     * @param \App\Service\AlbumService    $albumService
+     * @param \App\Service\AlbumService $albumService
      */
     public function __construct(AlbumService $albumService)
     {
@@ -95,7 +95,7 @@ class AlbumController extends AbstractController
      * Show action.
      *
      * @param \Symfony\Component\HttpFoundation\Request $request HTTP request
-     * @param \App\Entity\Album                      $album   Album entity
+     * @param \App\Entity\Album                         $album   Album entity
      *
      * @return \Symfony\Component\HttpFoundation\Response HTTP response
      *
@@ -123,7 +123,7 @@ class AlbumController extends AbstractController
      * Edit action.
      *
      * @param \Symfony\Component\HttpFoundation\Request $request HTTP request
-     * @param \App\Entity\Album                      $album   Album entity
+     * @param \App\Entity\Album                         $album   Album entity
      *
      * @return \Symfony\Component\HttpFoundation\Response HTTP response
      *
