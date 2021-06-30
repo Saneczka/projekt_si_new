@@ -34,7 +34,8 @@ class ImageRepository extends ServiceEntityRepository
     {
         $qb = $this
             ->createQueryBuilder('image')
-            //->leftJoin('image.comments', 'comments')
+            ->select('image', 'album')
+            ->join('image.album', 'album')
             ->orderBy('image.id', 'DESC');
 
         return $qb;

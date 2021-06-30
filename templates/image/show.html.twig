@@ -20,6 +20,35 @@
                 {{ 'action_back_to_list'|trans }} <i class="bi bi-arrow-return-left"></i>
             </a>
         </p>
+        <h3>{{ 'image_comments'|trans }}</h3>
+        {{ form_start(commentForm, { method: 'POST', action: url('image_show', {'id': image.id}), attr: {'novalidate': 'novalidate'} }) }}
+        <p class="mb-1">
+            {{ form_row(commentForm.nickname, {'attr': {'class': 'form-control'}}) }}
+        </p>
+        <p class="mb-1">
+            {{ form_row(commentForm.email, {'attr': {'class': 'form-control'}}) }}
+        </p>
+        <p class="mb-1">
+            {{ form_row(commentForm.content, {'attr': {'class': 'form-control'}}) }}
+        </p>
+        <div class="form-group row float-sm">
+            <input type="submit" value="{{ 'action_save'|trans }}" class="btn btn-success" />
+        </div>
+        {{ form_end(commentForm) }}
+
+        {% for comment in image.comments %}
+        <div class="row" style="background: #f8f9fa; margin-bottom: 1em;">
+            <dl class="dl-vertical">
+                <dt>{{ 'comment_nickname'|trans }}</dt>
+                <dd>{{ comment.nickname }}</dd>
+                <dt>{{ 'comment_email'|trans }}</dt>
+                <dd>{{ comment.email }}</dd>
+                <dt>{{ 'comment_content'|trans }}</dt>
+                <dd>{{ comment.content }}</dd>
+            </dl>
+        </div>
+        {% endfor %}
+
     {% else %}
         {% include 'default/_single_flash_message.html.twig' with {
             type: 'warning',

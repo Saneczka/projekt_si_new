@@ -6,8 +6,11 @@
 namespace App\Controller;
 
 use App\Entity\Album;
+use App\Entity\Comment;
 use App\Entity\Image;
+use App\Form\CommentFormType;
 use App\Form\ImageFormType;
+use App\Service\CommentService;
 use App\Service\ImageService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\Extension\Core\Type\FormType;
@@ -23,14 +26,18 @@ class ImageController extends AbstractController
 {
     /** @var \App\Service\ImageService */
     private $imageService;
+    /** @var \App\Service\CommentService */
+    private $commentService;
 
     /**
      * ImageController constructor.
      * @param \App\Service\ImageService    $imageService
+     * @param \App\Service\CommentService    $commentService
      */
-    public function __construct(ImageService $imageService)
+    public function __construct(ImageService $imageService, CommentService $commentService)
     {
         $this->imageService = $imageService;
+        $this->commentService = $commentService;
     }
 
     /**
@@ -104,17 +111,31 @@ class ImageController extends AbstractController
      *
      * @Route(
      *     "/image/{id}/show",
-     *     methods={"GET"},
+     *     methods={"GET", "POST"},
      *     requirements={"id": "[1-9]\d*"},
      *     name="image_show",
      * )
      */
     public function show(Request $request, Image $image): Response
     {
+        $comment = new Comment();
+        $comment->setImage($image);
+        $commentForm = $this->createForm(CommentFormType::class, $comment);
+        $commentForm->handleRequest($request);
+
+        if ($commentForm->isSubmitted() && $commentForm->isValid()) {
+            $this->commentService->save($comment);
+
+            $this->addFlash('success', 'comment_added_successfully');
+
+            return $this->redirectToRoute('image_show', ['id' => $image->getId()]);
+        }
+
         return $this->render(
             'image/show.html.twig',
             [
                 'image' => $image,
+                'commentForm' => $commentForm->createView()
             ]
         );
     }

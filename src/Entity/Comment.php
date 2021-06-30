@@ -45,6 +45,7 @@ class Comment
      * @var string
      *
      * @ORM\Column(type="string", length=64)
+     *
      * @Assert\NotBlank
      */
     private $nickname;
@@ -70,13 +71,13 @@ class Comment
      */
     public function getContent(): string
     {
-        return $this->content;
+        return (string) $this->content;
     }
 
     /**
-     * @param string $content
+     * @param string|null $content
      */
-    public function setContent(string $content): void
+    public function setContent(?string $content): void
     {
         $this->content = $content;
     }
@@ -86,13 +87,13 @@ class Comment
      */
     public function getEmail(): string
     {
-        return $this->email;
+        return (string) $this->email;
     }
 
     /**
-     * @param string $email
+     * @param string|null $email
      */
-    public function setEmail(string $email): void
+    public function setEmail(?string $email): void
     {
         $this->email = $email;
     }
@@ -102,13 +103,13 @@ class Comment
      */
     public function getNickname(): string
     {
-        return $this->nickname;
+        return (string) $this->nickname;
     }
 
     /**
-     * @param string $nickname
+     * @param string|null $nickname
      */
-    public function setNickname(string $nickname): void
+    public function setNickname(?string $nickname): void
     {
         $this->nickname = $nickname;
     }

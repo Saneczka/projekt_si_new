@@ -7,7 +7,6 @@ namespace App\Service;
 
 use App\Entity\Image;
 use App\Repository\ImageRepository;
-use Doctrine\DBAL\Types\DateImmutableType;
 use Knp\Component\Pager\Pagination\PaginationInterface;
 use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Component\Filesystem\Filesystem;

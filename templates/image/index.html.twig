@@ -25,6 +25,7 @@
                 <tr>
                     <th>{{ knp_pagination_sortable(pagination, 'label_id'|trans, 'image.id') }}</th>
                     <th>{{ 'image_picture'|trans }}</th>
+                    <th>{{ knp_pagination_sortable(pagination, 'image_album'|trans, 'album.name') }}</th>
                     <th>{{ knp_pagination_sortable(pagination, 'image_title'|trans, 'image.title') }}</th>
                     <th>{{ knp_pagination_sortable(pagination, 'image_description'|trans, 'image.description') }}</th>
                     <th>{{ 'label_actions'|trans }}</th>
@@ -35,6 +36,7 @@
                     <tr>
                         <td>{{ image.id }}</td>
                         <td><img src="{{ asset('/upload/')~image.filename }}" width="150"></td>
+                        <td>{{ image.album.name }}</td>
                         <td>{{ image.title }}</td>
                         <td>{{ image.description }}</td>
                         <td>
