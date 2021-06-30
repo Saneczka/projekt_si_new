@@ -1,0 +1,11 @@
+{% include 'default/_form.html.twig' with {
+    page_title: 'title_comment_edit',
+    page_title_param: {'%id%': comment.id},
+    attr: {
+        method: 'PUT',
+        action: url('comment_edit', {'id': comment.id}),
+        attr: {novalidate: 'novalidate'}
+    },
+    form: form,
+    back_to_list_path: 'comment_index',
+} %}

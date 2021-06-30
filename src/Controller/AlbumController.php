@@ -13,6 +13,7 @@ use Symfony\Component\Form\Extension\Core\Type\FormType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 
 /**
  * Class AlbumController
@@ -66,6 +67,8 @@ class AlbumController extends AbstractController
      *     methods={"GET", "POST"},
      *     name="album_create",
      * )
+     *
+     * @IsGranted("ROLE_ADMIN")
      */
     public function create(Request $request): Response
     {
@@ -133,6 +136,8 @@ class AlbumController extends AbstractController
      *     requirements={"id": "[1-9]\d*"},
      *     name="album_edit",
      * )
+     *
+     * @IsGranted("ROLE_ADMIN")
      */
     public function edit(Request $request, Album $album): Response
     {
@@ -174,6 +179,8 @@ class AlbumController extends AbstractController
      *     requirements={"id": "[1-9]\d*"},
      *     name="album_delete",
      * )
+     *
+     * @IsGranted("ROLE_ADMIN")
      */
     public function delete(Request $request, Album $album): Response
     {
