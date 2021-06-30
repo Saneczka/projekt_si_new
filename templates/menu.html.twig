@@ -7,10 +7,10 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link{% if pathInfo == '/contact/' %} active{% endif %}" aria-current="page" href="{{ url('image_index') }}">{{ 'menu_image'|trans }}</a>
+                    <a class="nav-link{% if pathInfo == '/image/' %} active{% endif %}" aria-current="page" href="{{ url('image_index') }}">{{ 'menu_image'|trans }}</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link{% if pathInfo == '/category/' %} active{% endif %}" href="{{ url('album_index') }}">{{ 'menu_comments'|trans }}</a>
+                    <a class="nav-link{% if pathInfo == '/comment/' %} active{% endif %}" href="{{ url('comment_index') }}">{{ 'menu_comments'|trans }}</a>
                 </li>
                 <li class="nav-item" style="float: right;">
                     <a class="nav-link" href="#">{{ 'menu_logout'|trans }}</a>
