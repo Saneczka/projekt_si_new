@@ -27,6 +27,7 @@
                     <th>{{ 'album_cover'|trans }}</th>
                     <th>{{ knp_pagination_sortable(pagination, 'album_title'|trans, 'album.name') }}</th>
                     <th>{{ knp_pagination_sortable(pagination, 'album_description'|trans, 'album.description') }}</th>
+                    <th>{{ 'album_photos_count'|trans }}</th>
                     <th>{{ knp_pagination_sortable(pagination, 'album_createdAt'|trans, 'album.createdAt') }}</th>
                     <th>{{ 'label_actions'|trans }}</th>
                 </tr>
@@ -44,6 +45,7 @@
                         </td>
                         <td>{{ album.name }}</td>
                         <td>{{ album.description }}</td>
+                        <td>{{ album.images|length }}</td>
                         <td>{{ album.createdAt|date('Y-m-d H:i') }}</td>
                         <td>
                             <a class="btn btn-primary" href="{{ url('album_show', {id: album.id}) }}"

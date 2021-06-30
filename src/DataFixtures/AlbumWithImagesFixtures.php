@@ -43,20 +43,18 @@ class AlbumWithImagesFixtures extends AbstractBaseFixtures implements DependentF
     {
         $faker = Factory::create();
 
-        $publicDir = $this->getUploadDir() . DIRECTORY_SEPARATOR . '..';
-
         // dodawanie albumów
         for ($i = 1; $i <= 30; ++$i) {
             $album = new Album();
             $album->setName("Album {$i}");
             $album->setDescription($faker->sentence);
-            $placeHolder = $publicDir . DIRECTORY_SEPARATOR . 'image-placeholder-350x350.png';
+            $photoToCopy = $this->getImgDir() . DIRECTORY_SEPARATOR . 'php-symfony.png';
 
             // dodawanie zdjęć do albumów
             $coverPhoto = '';
             for ($j = 1; $j <= 3; ++$j) {
                 $dest = $this->getUploadDir() . DIRECTORY_SEPARATOR . "placeholder_album_{$i}_{$j}.png";
-                $this->filesystem->copy($placeHolder, $dest, true);
+                $this->filesystem->copy($photoToCopy, $dest, true);
                 $pathInfo = pathinfo($dest);
 
                 $img = new Image();
@@ -98,6 +96,14 @@ class AlbumWithImagesFixtures extends AbstractBaseFixtures implements DependentF
     }
 
     /**
+     * @return string
+     */
+    protected function getImgDir()
+    {
+        return $this->parameterBag->get('img_dir');
+    }
+
+    /**
      * @return string[]
      */
     public function getDependencies()
@@ -106,5 +112,4 @@ class AlbumWithImagesFixtures extends AbstractBaseFixtures implements DependentF
             UserFixtures::class,
         ];
     }
-
 }

@@ -6,10 +6,18 @@
 
 {% block body %}
     <h1>{{ 'title_comment_show'|trans({'%id%':comment.id|default('')}) }}</h1>
+    <p>
+        <a href="{{ url('comment_index') }}" class="btn btn-light">
+            {{ 'action_back_to_list'|trans }} <i class="bi bi-arrow-return-left"></i>
+        </a>
+    </p>
     {% if comment is defined %}
         <dl class="dl-horizontal">
             <dt>{{ 'label_id'|trans }}</dt>
             <dd>{{ comment.id }}</dd>
+            <dt>{{ 'image_picture'|trans }}</dt>
+            <dd>{{ comment.image.title }}</dd>
+            <dd><img src="{{ asset('/upload/')~comment.image.filename }}" width="150"></dd>
             <dt>{{ 'comment_nickname'|trans }}</dt>
             <dd>{{ comment.nickname }}</dd>
             <dt>{{ 'comment_email'|trans }}</dt>
@@ -17,11 +25,6 @@
             <dt>{{ 'comment_content'|trans }}</dt>
             <dd>{{ comment.content }}</dd>
         </dl>
-        <p>
-            <a href="{{ url('comment_index') }}" class="btn btn-light">
-                {{ 'action_back_to_list'|trans }} <i class="bi bi-arrow-return-left"></i>
-            </a>
-        </p>
     {% else %}
         {% include 'default/_single_flash_message.html.twig' with {
             type: 'warning',

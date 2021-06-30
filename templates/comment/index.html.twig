@@ -24,6 +24,7 @@
                 <thead>
                 <tr>
                     <th>{{ knp_pagination_sortable(pagination, 'label_id'|trans, 'comment.id') }}</th>
+                    <th>{{ knp_pagination_sortable(pagination, 'image_picture'|trans, 'image.title') }}</th>
                     <th>{{ knp_pagination_sortable(pagination, 'comment_nickname'|trans, 'comment.nickname') }}</th>
                     <th>{{ knp_pagination_sortable(pagination, 'comment_email'|trans, 'comment.email') }}</th>
                     <th>{{ knp_pagination_sortable(pagination, 'comment_content'|trans, 'comment.content') }}</th>
@@ -34,6 +35,7 @@
                 {% for comment in pagination.items %}
                     <tr>
                         <td>{{ comment.id }}</td>
+                        <td>{{ comment.image.title }}</td>
                         <td>{{ comment.nickname }}</td>
                         <td>{{ comment.email }}</td>
                         <td>{{ comment.content }}</td>

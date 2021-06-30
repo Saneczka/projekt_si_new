@@ -6,6 +6,11 @@
 
 {% block body %}
     <h1>{{ 'title_image_show'|trans({'%id%':image.id|default('')}) }}</h1>
+    <p>
+        <a href="{{ url('image_index') }}" class="btn btn-light">
+            {{ 'action_back_to_list'|trans }} <i class="bi bi-arrow-return-left"></i>
+        </a>
+    </p>
     {% if image is defined %}
         <dl class="dl-horizontal">
             <dt>{{ 'label_id'|trans }}</dt>
@@ -14,12 +19,10 @@
             <dd>{{ image.title }}</dd>
             <dt>{{ 'image_description'|trans }}</dt>
             <dd>{{ image.description }}</dd>
+            <dt>{{ 'image_picture'|trans }}</dt>
+            <dd><img src="{{ asset('/upload/')~image.filename }}" width="150"></dd>
         </dl>
-        <p>
-            <a href="{{ url('image_index') }}" class="btn btn-light">
-                {{ 'action_back_to_list'|trans }} <i class="bi bi-arrow-return-left"></i>
-            </a>
-        </p>
+
         <h3>{{ 'image_comments'|trans }}</h3>
         {{ form_start(commentForm, { method: 'POST', action: url('image_show', {'id': image.id}), attr: {'novalidate': 'novalidate'} }) }}
         <p class="mb-1">

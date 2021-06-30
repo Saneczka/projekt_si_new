@@ -119,7 +119,7 @@
       </trans-unit>
       <trans-unit id="xAe6P0D" resname="title_image_show">
         <source>title_image_show</source>
-        <target>Zdjęcie</target>
+        <target>Podgląd zdjęcia</target>
       </trans-unit>
       <trans-unit id="kk82LWl" resname="image_comments">
         <source>image_comments</source>
@@ -155,7 +155,7 @@
       </trans-unit>
       <trans-unit id="osl_One" resname="title_album_show">
         <source>title_album_show</source>
-        <target>Album</target>
+        <target>Podgląd albumu</target>
       </trans-unit>
       <trans-unit id="hOeEx61" resname="album_name">
         <source>album_name</source>
@@ -208,6 +208,30 @@
       <trans-unit id="title_comment_edit" resname="title_comment_edit">
         <source>title_comment_edit</source>
         <target>Edytuj komentarz</target>
+      </trans-unit>
+      <trans-unit id="title_image_in_album" resname="title_image_in_album">
+        <source>title_image_in_album</source>
+        <target>Zdjęcia w albumie</target>
+      </trans-unit>
+      <trans-unit id="title_image_in_album_no_photos" resname="title_image_in_album_no_photos">
+        <source>title_image_in_album_no_photos</source>
+        <target>Brak zdjęć w albumie</target>
+      </trans-unit>
+      <trans-unit id="album_photos_count" resname="album_photos_count">
+        <source>album_photos_count</source>
+        <target>Liczba zdjęć</target>
+      </trans-unit>
+      <trans-unit id="message_added_successfully" resname="message_added_successfully">
+        <source>message_added_successfully</source>
+        <target>Dodano element</target>
+      </trans-unit>
+      <trans-unit id="message_updated_successfully" resname="message_updated_successfully">
+        <source>message_updated_successfully</source>
+        <target>Zaktualizowano element</target>
+      </trans-unit>
+      <trans-unit id="message_deleted_successfully" resname="message_deleted_successfully">
+        <source>message_deleted_successfully</source>
+        <target>Usunięto element</target>
       </trans-unit>
     </body>
   </file>

@@ -34,7 +34,8 @@ class AlbumRepository extends ServiceEntityRepository
     {
         $qb = $this
             ->createQueryBuilder('album')
-            //->leftJoin('album.images', 'images')
+            ->select('album', 'images')
+            ->leftJoin('album.images', 'images')
             ->orderBy('album.id', 'DESC');
 
         return $qb;

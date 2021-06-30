@@ -6,6 +6,11 @@
 
 {% block body %}
     <h1>{{ 'title_album_show'|trans({'%id%':album.id|default('')}) }}</h1>
+    <p>
+        <a href="{{ url('album_index') }}" class="btn btn-light">
+            {{ 'action_back_to_list'|trans }} <i class="bi bi-arrow-return-left"></i>
+        </a>
+    </p>
     {% if album is defined %}
         <dl class="dl-horizontal">
             <dt>{{ 'label_id'|trans }}</dt>
@@ -15,11 +20,27 @@
             <dt>{{ 'album_description'|trans }}</dt>
             <dd>{{ album.description }}</dd>
         </dl>
-        <p>
-            <a href="{{ url('album_index') }}" class="btn btn-light">
-                {{ 'action_back_to_list'|trans }} <i class="bi bi-arrow-return-left"></i>
-            </a>
-        </p>
+
+        {% if album.images|length %}
+        <h3>{{ 'title_image_in_album'|trans }}: {{ album.images|length }}</h3>
+        {% for image in album.images %}
+            <div class="row" style="background: #f8f9fa; margin-bottom: 1em;">
+                <dl class="dl-horizontal">
+                    <dt>{{ 'label_id'|trans }}</dt>
+                    <dd>{{ image.id }}</dd>
+                    <dt>{{ 'image_title'|trans }}</dt>
+                    <dd>{{ image.title }}</dd>
+                    <dt>{{ 'image_description'|trans }}</dt>
+                    <dd>{{ image.description }}</dd>
+                    <dt>{{ 'image_picture'|trans }}</dt>
+                    <dd><img src="{{ asset('/upload/')~image.filename }}" width="150"></dd>
+                </dl>
+            </div>
+        {% endfor %}
+        {% else %}
+            <h3>{{ 'title_image_in_album_no_photos'|trans }}</h3>
+        {% endif %}
+
     {% else %}
         {% include 'default/_single_flash_message.html.twig' with {
             type: 'warning',

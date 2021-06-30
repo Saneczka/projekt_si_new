@@ -34,6 +34,8 @@ class CommentRepository extends ServiceEntityRepository
     {
         $qb = $this
             ->createQueryBuilder('comment')
+            ->select('comment', 'image')
+            ->join('comment.image', 'image')
             ->orderBy('comment.id', 'DESC');
 
         return $qb;
