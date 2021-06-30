@@ -1,0 +1,11 @@
+{% include 'default/_form.html.twig' with {
+    page_title: 'title_album_create',
+    attr: {
+        method: 'POST',
+        action: url('album_create'),
+        attr: {novalidate: 'novalidate'}
+    },
+    form: form,
+    submit_label: 'action_create'|trans,
+    back_to_list_path: 'album_index',
+} %}

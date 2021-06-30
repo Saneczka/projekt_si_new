@@ -63,7 +63,7 @@ class AlbumWithImagesFixtures extends AbstractBaseFixtures implements DependentF
                 $img->setTitle("Image {$i}/{$j}");
                 $img->setDescription($faker->sentence);
                 $img->setFilename($pathInfo['basename']);
-                if($coverPhoto) {
+                if($coverPhoto === '') {
                     $coverPhoto = $pathInfo['basename'];
                 }
 

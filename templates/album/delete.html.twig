@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ 'title_album_delete'|trans({'%id%': album.id|default('')}) }}
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col col-lg">
+            <h1>{{ 'title_album_delete'|trans({'%id%': album.id|default('')}) }}</h1>
+            <div class="alert alert-danger" role="alert">
+                {{ 'alert_delete_element'|trans }}
+            </div>
+            {{ form_start(form, { method: 'DELETE', action: url('album_delete', {id: album.id}) }) }}
+            {{ form_widget(form) }}
+            <div class="form-group row float-sm-right">
+                <input type="submit" value="{{ 'action_delete'|trans }}" class="btn btn-danger" />
+            </div>
+            <div class="form-group row float-sm-left">
+                <a href="{{ url('album_index') }}" class="btn btn-link">
+                    {{ 'action_back_to_list'|trans }}
+                </a>
+            </div>
+            {{ form_end(form) }}
+        </div>
+    </div>
+</div>
+{% endblock %}

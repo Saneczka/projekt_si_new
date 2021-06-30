@@ -1,0 +1,11 @@
+{% include 'default/_form.html.twig' with {
+    page_title: 'title_album_edit',
+    page_title_param: {'%id%': album.id},
+    attr: {
+        method: 'PUT',
+        action: url('album_edit', {'id': album.id}),
+        attr: {novalidate: 'novalidate'}
+    },
+    form: form,
+    back_to_list_path: 'album_index',
+} %}
