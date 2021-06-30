@@ -35,7 +35,7 @@
                 {% for image in pagination.items %}
                     <tr>
                         <td>{{ image.id }}</td>
-                        <td><img src="{{ asset('/upload/')~image.filename }}" width="150"></td>
+                        <td><img src="{{ asset('upload/')~image.filename }}" width="150"></td>
                         <td>{{ image.album.name }}</td>
                         <td>{{ image.title }}</td>
                         <td>{{ image.description }}</td>

@@ -17,7 +17,7 @@
             <dd>{{ comment.id }}</dd>
             <dt>{{ 'image_picture'|trans }}</dt>
             <dd>{{ comment.image.title }}</dd>
-            <dd><img src="{{ asset('/upload/')~comment.image.filename }}" width="150"></dd>
+            <dd><img src="{{ asset('upload/')~comment.image.filename }}" width="150"></dd>
             <dt>{{ 'comment_nickname'|trans }}</dt>
             <dd>{{ comment.nickname }}</dd>
             <dt>{{ 'comment_email'|trans }}</dt>

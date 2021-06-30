@@ -33,7 +33,7 @@
                     <dt>{{ 'image_description'|trans }}</dt>
                     <dd>{{ image.description }}</dd>
                     <dt>{{ 'image_picture'|trans }}</dt>
-                    <dd><img src="{{ asset('/upload/')~image.filename }}" width="150"></dd>
+                    <dd><img src="{{ asset('upload/')~image.filename }}" width="150"></dd>
                 </dl>
             </div>
         {% endfor %}
