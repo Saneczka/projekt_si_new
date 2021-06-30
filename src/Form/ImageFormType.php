@@ -15,6 +15,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints\File;
+use Symfony\Component\Validator\Constraints\NotBlank;
 
 /**
  * Class EventFormType
@@ -33,22 +34,28 @@ class ImageFormType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
+        $fileConstraints = [
+            new File([
+                'maxSize' => '10240k',
+                'mimeTypes' => [
+                    'image/jpeg',
+                    'image/png',
+                    'image/gif',
+                ],
+                'mimeTypesMessage' => 'label_upload_a_valid_photo',
+            ]),
+        ];
+
+        if($options['photo_required']) {
+            $fileConstraints[] = new NotBlank();
+        }
+
         $builder
             ->add('file', FileType::class, [
                 'label' => 'label_add_file',
                 'mapped' => false,
                 'required' => false,
-                'constraints' => [
-                    new File([
-                        'maxSize' => '10240k',
-                        'mimeTypes' => [
-                            'image/jpeg',
-                            'image/png',
-                            'image/gif',
-                        ],
-                        'mimeTypesMessage' => 'label_upload_a_valid_photo',
-                    ]),
-                ],
+                'constraints' => $fileConstraints,
             ])
             ->add(
                 'album',
@@ -85,7 +92,10 @@ class ImageFormType extends AbstractType
      */
     public function configureOptions(OptionsResolver $resolver): void
     {
-        $resolver->setDefaults(['data_class' => Image::class]);
+        $resolver->setDefaults([
+            'data_class' => Image::class,
+            'photo_required' => false,
+        ]);
     }
 
     /**

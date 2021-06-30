@@ -40,7 +40,7 @@
                             {% if album.cover %}
                             <img src="{{ asset('/upload/')~album.cover }}" width="150">
                             {% else %}
-                            {{ 'no_cover_photo'|trans }}
+                            <img src="{{ asset('/img/image-placeholder-350x350.png') }}" width="150">
                             {% endif %}
                         </td>
                         <td>{{ album.name }}</td>

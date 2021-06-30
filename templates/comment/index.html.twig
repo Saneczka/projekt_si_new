@@ -7,14 +7,6 @@
     {% block body %}
     <div id="comment_list">
         <h1>{{ 'comment_list_title'|trans }}</h1>
-        {% if is_granted('ROLE_ADMIN') %}
-        <div class="button-container" style="margin-bottom: 1em;">
-            <a class="btn btn-success" href="{{ url('comment_create') }}"
-               title="{{ 'action_create'|trans }}">
-                {{ 'action_create'|trans }}
-            </a>
-        </div>
-        {% endif %}
         {% if pagination is defined and pagination.items|length %}
             <div class="navigation text-center">
                 {{ knp_pagination_render(pagination) }}

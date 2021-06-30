@@ -28,6 +28,8 @@ class Album
      * @var string
      *
      * @ORM\Column(name="name", type="string", length=255)
+     *
+     * @Assert\NotBlank
      */
     private $name;
 
@@ -96,9 +98,9 @@ class Album
     }
 
     /**
-     * @param string $name
+     * @param string|null $name
      */
-    public function setName(string $name): void
+    public function setName(?string $name): void
     {
         $this->name = $name;
     }
@@ -112,9 +114,9 @@ class Album
     }
 
     /**
-     * @param string $description
+     * @param string|null $description
      */
-    public function setDescription(string $description): void
+    public function setDescription(?string $description): void
     {
         $this->description = $description;
     }

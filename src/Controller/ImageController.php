@@ -81,7 +81,9 @@ class ImageController extends AbstractController
     public function create(Request $request): Response
     {
         $image = new Image();
-        $form = $this->createForm(ImageFormType::class, $image);
+        $form = $this->createForm(ImageFormType::class, $image, [
+            'photo_required' => true
+        ]);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
