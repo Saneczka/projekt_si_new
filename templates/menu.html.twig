@@ -12,10 +12,15 @@
                 <li class="nav-item">
                     <a class="nav-link{% if pathInfo == '/comment/' %} active{% endif %}" href="{{ url('comment_index') }}">{{ 'menu_comments'|trans }}</a>
                 </li>
+                {% if is_granted('IS_AUTHENTICATED_FULLY') %}
                 <li class="nav-item" style="float: right;">
-                    <a class="nav-link" href="#">{{ 'menu_logout'|trans }}</a>
-{#                    <a class="nav-link" href="{{ url('app_logout') }}">{{ 'menu_logout'|trans }}</a>#}
+                    <a class="nav-link" href="{{ url('app_logout') }}">{{ 'menu_logout'|trans }}</a>
                 </li>
+                {% else %}
+                <li class="nav-item" style="float: right;">
+                    <a class="nav-link" href="{{ url('app_login') }}">{{ 'menu_login'|trans }}</a>
+                </li>
+                {% endif %}
             </ul>
         </div>
     </div>
