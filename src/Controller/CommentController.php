@@ -75,7 +75,6 @@ class CommentController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $comment->setUser($this->getUser());
             $this->commentService->save($comment);
 
             $this->addFlash('success', 'message_added_successfully');
@@ -143,7 +142,6 @@ class CommentController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $comment->setUser($this->getUser());
             $this->commentService->save($comment);
 
             $this->addFlash('success', 'message_updated_successfully');
