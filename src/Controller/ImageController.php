@@ -5,6 +5,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Album;
 use App\Entity\Image;
 use App\Form\ImageFormType;
 use App\Service\ImageService;
@@ -77,8 +78,7 @@ class ImageController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $image->setUser($this->getUser());
-            $this->imageService->save($image);
+            $this->imageService->save($image, $form->get('file')->getData());
 
             $this->addFlash('success', 'message_added_successfully');
 
@@ -145,8 +145,7 @@ class ImageController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $image->setUser($this->getUser());
-            $this->imageService->save($image);
+            $this->imageService->save($image, $form->get('file')->getData());
 
             $this->addFlash('success', 'message_updated_successfully');
 

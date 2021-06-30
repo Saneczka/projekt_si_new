@@ -5,12 +5,16 @@
 
 namespace App\Form;
 
+use App\Entity\Album;
 use App\Entity\Image;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Validator\Constraints\File;
 
 /**
  * Class EventFormType
@@ -30,6 +34,32 @@ class ImageFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
+            ->add('file', FileType::class, [
+                'label' => 'label_add_file',
+                'mapped' => false,
+                'required' => false,
+                'constraints' => [
+                    new File([
+                        'maxSize' => '10240k',
+                        'mimeTypes' => [
+                            'image/jpeg',
+                            'image/png',
+                            'image/gif',
+                        ],
+                        'mimeTypesMessage' => 'label_upload_a_valid_photo',
+                    ]),
+                ],
+            ])
+            ->add(
+                'album',
+                EntityType::class,
+                [
+                    'class' => Album::class,
+                    'choice_label' => 'name',
+                    'label' => 'image_album',
+                    'required' => true,
+                ]
+            )
             ->add(
                 'title',
                 TextType::class,

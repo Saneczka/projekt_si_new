@@ -78,7 +78,7 @@ class Image
      */
     public function getFilename(): string
     {
-        return $this->filename;
+        return (string) $this->filename;
     }
 
     /**
@@ -94,7 +94,7 @@ class Image
      */
     public function getDescription(): string
     {
-        return $this->description;
+        return (string) $this->description;
     }
 
     /**
@@ -106,9 +106,9 @@ class Image
     }
 
     /**
-     * @return Album
+     * @return Album|null
      */
-    public function getAlbum(): Album
+    public function getAlbum(): ?Album
     {
         return $this->album;
     }
@@ -164,7 +164,7 @@ class Image
      */
     public function getTitle(): string
     {
-        return $this->title;
+        return (string) $this->title;
     }
 
     /**
