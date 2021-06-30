@@ -205,6 +205,38 @@
         <source>message_deleted_successfully</source>
         <target>__message_deleted_successfully</target>
       </trans-unit>
+      <trans-unit id="menu_edit_profile" resname="menu_edit_profile">
+        <source>menu_edit_profile</source>
+        <target>__menu_edit_profile</target>
+      </trans-unit>
+      <trans-unit id="title_user_edit" resname="title_user_edit">
+        <source>title_user_edit</source>
+        <target>__title_user_edit</target>
+      </trans-unit>
+      <trans-unit id="label_username" resname="label_username">
+        <source>label_username</source>
+        <target>__label_username</target>
+      </trans-unit>
+      <trans-unit id="user_data_firstname" resname="user_data_firstname">
+        <source>user_data_firstname</source>
+        <target>__user_data_firstname</target>
+      </trans-unit>
+      <trans-unit id="user_data_lastname" resname="user_data_lastname">
+        <source>user_data_lastname</source>
+        <target>__user_data_lastname</target>
+      </trans-unit>
+      <trans-unit id="user_data_email" resname="user_data_email">
+        <source>user_data_email</source>
+        <target>__user_data_email</target>
+      </trans-unit>
+      <trans-unit id="label_password" resname="label_password">
+        <source>label_password</source>
+        <target>__label_password</target>
+      </trans-unit>
+      <trans-unit id="label_password_repeat" resname="label_password_repeat">
+        <source>label_password_repeat</source>
+        <target>__label_password_repeat</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

@@ -237,6 +237,34 @@
         <source>menu_edit_profile</source>
         <target>Edytuj profil</target>
       </trans-unit>
+      <trans-unit id="title_user_edit" resname="title_user_edit">
+        <source>title_user_edit</source>
+        <target>Edytuj profil</target>
+      </trans-unit>
+      <trans-unit id="label_username" resname="label_username">
+        <source>label_username</source>
+        <target>Nazwa użytkownika</target>
+      </trans-unit>
+      <trans-unit id="user_data_firstname" resname="user_data_firstname">
+        <source>user_data_firstname</source>
+        <target>Imię</target>
+      </trans-unit>
+      <trans-unit id="user_data_lastname" resname="user_data_lastname">
+        <source>user_data_lastname</source>
+        <target>Nazwisko</target>
+      </trans-unit>
+      <trans-unit id="user_data_email" resname="user_data_email">
+        <source>user_data_email</source>
+        <target>Email</target>
+      </trans-unit>
+      <trans-unit id="label_password" resname="label_password">
+        <source>label_password</source>
+        <target>Hasło</target>
+      </trans-unit>
+      <trans-unit id="label_password_repeat" resname="label_password_repeat">
+        <source>label_password_repeat</source>
+        <target>Potwórz hasło</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
